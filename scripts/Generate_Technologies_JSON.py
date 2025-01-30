@@ -20,7 +20,7 @@ CS_BASE_URL = "https://cheatsheetseries.owasp.org/cheatsheets/%s.html"
 
 # Grab the index MD source from the GitHub repository
 response = requests.get(
-    "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/Index.md")
+    "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/Index.md", timeout=60)
 if response.status_code != 200:
     print("Cannot load the INDEX content: HTTP %s received!" %
           response.status_code)

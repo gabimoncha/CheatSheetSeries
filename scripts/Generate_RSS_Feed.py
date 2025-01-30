@@ -20,7 +20,7 @@ PR_API = "https://api.github.com/repos/OWASP/CheatSheetSeries/pulls?page=1&per_p
 
 # Grab the list of open PR
 print("[+] Grab the list of closed PR via the GitHub API...")
-response = requests.get(PR_API)
+response = requests.get(PR_API, timeout=60)
 if response.status_code != 200:
     print("Cannot load the list of PR content: HTTP %s received!" %  response.status_code)
     sys.exit(1)
